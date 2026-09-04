@@ -1,24 +1,35 @@
 :root {
-  /* Colors based on reference image */
-  --color-bg-primary: #fff8eb;
-  --color-bg-secondary: #ffffff;
-  --color-primary: #ffc72c; /* Warm yellow */
-  --color-primary-dark: #f0b518;
-  --color-secondary: #ff7f50; /* Coral/Orange for accents */
-  --color-success: #4ade80; /* Green for correct answers */
-  --color-error: #ef4444;
-  --color-text-main: #333333;
-  --color-text-muted: #888888;
+  /* Claymorphism Color Palette */
+  --color-bg-primary: #FAF1E6; /* Soft creamy beige background */
+  --color-bg-secondary: #FFFFFF;
+  
+  /* Vibrant Pastels */
+  --color-pastel-green: #C2E0D4;
+  --color-pastel-peach: #FFD2C0;
+  --color-pastel-blue: #C3D5E6;
+  --color-pastel-yellow: #FFE8B6;
+  --color-pastel-pink: #FFC0CB;
+
+  --color-primary: var(--color-pastel-peach);
+  --color-primary-dark: #FFB399;
+  --color-secondary: var(--color-pastel-green);
+  --color-success: #A3D9A5; 
+  --color-error: #FF9999;
+  --color-text-main: #4A4036; /* Soft dark brown for readability */
+  --color-text-muted: #8A7E71;
 
   /* Typography */
   --font-family: 'Nunito', sans-serif;
 
   /* UI Elements */
-  --border-radius-lg: 24px;
-  --border-radius-md: 16px;
-  --border-radius-sm: 8px;
-  --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
-  --shadow-md: 0 8px 16px rgba(0,0,0,0.08);
+  --border-radius-lg: 32px;
+  --border-radius-md: 24px;
+  --border-radius-sm: 16px;
+  
+  /* Clay Shadows */
+  --shadow-clay-outer: 8px 8px 16px rgba(180, 160, 140, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.8);
+  --shadow-clay-inner: inset 4px 4px 8px rgba(255, 255, 255, 0.7), inset -4px -4px 8px rgba(180, 160, 140, 0.1);
+  --shadow-clay-btn: 4px 4px 8px rgba(180, 160, 140, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8), inset 2px 2px 4px rgba(255, 255, 255, 0.7), inset -2px -2px 4px rgba(180, 160, 140, 0.1);
 }
 
 * {
@@ -32,9 +43,6 @@ body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-main);
   min-height: 100vh;
-  /* Dotted background pattern */
-  background-image: radial-gradient(circle, #f3e6d0 2px, transparent 2px);
-  background-size: 24px 24px;
 }
 
 /* Base button styles */
