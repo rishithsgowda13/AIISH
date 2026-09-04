@@ -1,0 +1,80 @@
+:root {
+  /* Colors based on reference image */
+  --color-bg-primary: #fff8eb;
+  --color-bg-secondary: #ffffff;
+  --color-primary: #ffc72c; /* Warm yellow */
+  --color-primary-dark: #f0b518;
+  --color-secondary: #ff7f50; /* Coral/Orange for accents */
+  --color-success: #4ade80; /* Green for correct answers */
+  --color-error: #ef4444;
+  --color-text-main: #333333;
+  --color-text-muted: #888888;
+
+  /* Typography */
+  --font-family: 'Nunito', sans-serif;
+
+  /* UI Elements */
+  --border-radius-lg: 24px;
+  --border-radius-md: 16px;
+  --border-radius-sm: 8px;
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-main);
+  min-height: 100vh;
+  /* Dotted background pattern */
+  background-image: radial-gradient(circle, #f3e6d0 2px, transparent 2px);
+  background-size: 24px 24px;
+}
+
+/* Base button styles */
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Utilities */
+.app-container {
+  max-width: 480px; /* Mobile/tablet optimized width */
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--color-bg-secondary);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Smooth fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Bouncy scale */
+@keyframes bouncyScale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-bounce-scale:hover {
+  animation: bouncyScale 0.4s ease-in-out infinite;
+}
