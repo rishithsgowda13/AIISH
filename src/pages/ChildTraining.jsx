@@ -5,11 +5,13 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import { Volume2, CheckCircle, XCircle } from 'lucide-react';
 
+import { playSfx, speakWord } from '../utils/audio';
+
 // Mock data for a session
 const mockTrials = [
-  { id: 1, word: 'MILK', occludedWord: 'Mil__', isCorrect: true },
-  { id: 2, word: 'APPLE', occludedWord: 'A__LE', isCorrect: true },
-  { id: 3, word: 'CAT', occludedWord: 'C_T', isCorrect: true },
+  { id: 1, word: 'MILK', occludedWord: 'Mil__', isCorrect: true, occlusionType: 'beep' },
+  { id: 2, word: 'APPLE', occludedWord: 'A__LE', isCorrect: true, occlusionType: 'noise' },
+  { id: 3, word: 'CAT', occludedWord: 'C_T', isCorrect: true, occlusionType: 'beep' },
 ];
 
 export default function ChildTraining() {
@@ -23,21 +25,29 @@ export default function ChildTraining() {
 
   const trial = mockTrials[currentTrial];
 
+  // Auto play audio when new trial is shown
+  useEffect(() => {
+    speakWord(trial.word, { occlusionType: trial.occlusionType });
+  }, [currentTrial]);
+
   const handlePlayAudio = (type) => {
-    // Web Audio API logic would go here
-    // For now, simulate by console log
-    console.log(`Playing ${type} audio for ${trial.word}`);
+    speakWord(trial.word, { occlusionType: trial.occlusionType });
   };
 
   const handleAnswer = (answer) => {
-    // Hardcoded logic for mock: YES is always correct for demo
     const correct = answer === 'YES';
     setIsCorrect(correct);
-    if (correct) setScore(s => s + 1);
+    if (correct) {
+      setScore(s => s + 1);
+      playSfx('success');
+    } else {
+      playSfx('error');
+    }
     setShowFeedback(true);
   };
 
   const handleNext = () => {
+    playSfx('click');
     setShowFeedback(false);
     if (currentTrial < mockTrials.length - 1) {
       setCurrentTrial(c => c + 1);
