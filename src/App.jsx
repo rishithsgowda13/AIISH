@@ -8,8 +8,9 @@ import ChildLevelSelect from './pages/ChildLevelSelect';
 import ChildTraining from './pages/ChildTraining';
 import ChildScorecard from './pages/ChildScorecard';
 
+import ParentPortal from './pages/ParentPortal';
+
 // Stubs for now
-const ParentPortal = () => <div className="p-4">Parent Portal</div>;
 const TherapistPortal = () => <div className="p-4">Therapist Portal</div>;
 
 function App() {
