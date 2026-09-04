@@ -19,17 +19,17 @@
   --color-text-muted: #8A7E71;
 
   /* Typography */
-  --font-family: 'Nunito', sans-serif;
+  --font-family: 'Fredoka', sans-serif;
 
   /* UI Elements */
   --border-radius-lg: 32px;
   --border-radius-md: 24px;
   --border-radius-sm: 16px;
   
-  /* Clay Shadows */
-  --shadow-clay-outer: 8px 8px 16px rgba(180, 160, 140, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.8);
-  --shadow-clay-inner: inset 4px 4px 8px rgba(255, 255, 255, 0.7), inset -4px -4px 8px rgba(180, 160, 140, 0.1);
-  --shadow-clay-btn: 4px 4px 8px rgba(180, 160, 140, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8), inset 2px 2px 4px rgba(255, 255, 255, 0.7), inset -2px -2px 4px rgba(180, 160, 140, 0.1);
+  /* Cartoon Shadows */
+  --shadow-clay-outer: 4px 6px 0px #4A4036;
+  --shadow-clay-inner: none;
+  --shadow-clay-btn: 2px 4px 0px #4A4036;
 }
 
 * {
@@ -43,6 +43,9 @@ body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-main);
   min-height: 100vh;
+  /* Add a subtle doodle paper texture */
+  background-image: radial-gradient(#d4c4b7 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 /* Base button styles */
